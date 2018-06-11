@@ -1,0 +1,17 @@
+<apex:page standardController="Opportunity" recordSetVar="temp">
+    <apex:form >
+        <apex:pageBlock title="Opportunity List">
+            <apex:pageBlockTable title="List Details" columns="3" value="{!temp}" var="x">
+                
+                    <apex:column >
+                        <apex:commandLink value="{!x.Name}"/>
+                    </apex:column>
+                
+                <apex:column value="{!x.Amount}"/>
+                <apex:column value="{!x.StageName}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        <apex:commandButton value="New" action="{!Save}"/>
+    </apex:form>
+
+</apex:page>

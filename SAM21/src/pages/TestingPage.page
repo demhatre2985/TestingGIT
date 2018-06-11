@@ -1,0 +1,18 @@
+<apex:page standardController="Supply__c">
+    <b>This is Saple Testing page for {!$User.FirstName}</b>
+    
+   <apex:form >
+       <apex:pageBlock title="PageBalock1">
+       
+           <apex:pageBlockSection title="Section1" collapsible="true" columns="2">
+               <apex:inputCheckbox label="Testing Done"/>
+               <apex:inputText label="Supplier Value" value="{!Supply__c.Name}"/>
+               <apex:inputText label="Total Cost" value="{!Supply__c.Total_Cost__c}"/>
+               
+               <apex:commandButton action="{!Save}" value="Save In Account"/>
+              
+           </apex:pageBlockSection>       
+       </apex:pageBlock>
+       
+   </apex:form>
+</apex:page>

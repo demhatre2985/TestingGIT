@@ -1,0 +1,20 @@
+<apex:page controller="OptyClass1">
+
+    <apex:pageBlock title="Open Opportunities">
+        <apex:pageBlockTable value="{!open_opty}" var="a">
+            <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Type}"/>
+            <apex:column value="{!a.StageName}"/>
+            <apex:column value="{!a.Type}"/>
+        </apex:pageBlockTable>                  
+    </apex:pageBlock>
+    
+     <apex:pageBlock title="Closed Opportunities">
+             <apex:pageBlockTable value="{!closed_opty}" var="b">
+                <apex:column value="{!b.Name}"/>
+                <apex:column value="{!b.Type}"/>
+                <apex:column value="{!b.StageName}"/>
+                <apex:column value="{!b.Type}"/>
+             </apex:pageBlockTable> 
+    </apex:pageBlock>
+</apex:page>

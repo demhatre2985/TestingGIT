@@ -1,0 +1,23 @@
+<apex:page controller="Test1">
+    <apex:form >
+        <apex:pageBlock id="pg">
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                Record Id
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:inputText value="{!recId}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Find" action="{!find}" reRender="pg"/>
+            </apex:pageBlockButtons>
+            
+            <apex:outputText >Object NAme is : {!objType}</apex:outputText>
+            <br></br>
+            <apex:outputText >Object Details is : {!objDet}</apex:outputText>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,15 @@
+<apex:page standardController="Account">
+<apex:form >
+  <h1>Congratulations : Sample Search page</h1>
+      <apex:pageBlock title="Block 1">
+          <apex:pageBlockSection title="Sample page to display results" collapsible="True" columns="2">
+          
+          </apex:pageBlockSection>
+              <apex:pageBlockButtons title="Search" >
+
+              </apex:pageBlockButtons>
+      </apex:pageBlock>
+                        <apex:commandButton value="Testing in Progress"/>
+
+</apex:form>
+</apex:page>

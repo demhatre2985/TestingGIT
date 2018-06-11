@@ -1,0 +1,26 @@
+<apex:page standardController="Account" extensions="GoogleLink" >
+        <b>{!Today()}  and user is {!$User.FirstName}  {!$User.LastName} !!!</b>
+        <p>{!Today()}  and user is {!$User.FirstName}  {!$User.LastName} !!!</p>
+    <apex:form title="This is apex form1 ">
+       
+       <apex:pageBlock title="This is apex form1" >
+           <apex:commandButton action="{!Save}" value="Save In Account"/>
+           <apex:commandButton action="{!GotoGoogle}" value="Google Link"/>
+           <apex:pageBlockSection title="Page Bloack Section 1" collapsible="false" columns="2">
+               <apex:image value="https://developer.salesforce.com/files/salesforce-developer-network-logo.png" width="500"/>
+               <apex:inputField value="{!Account.name}"/>
+               <apex:inputField value="{!Account.AccountNumber}"/>
+               <apex:inputField value="{!Account.Active__c}"/>
+              
+           </apex:pageBlockSection>>
+       </apex:pageBlock>
+    </apex:form>
+    <apex:form title="This is apex form2">
+         <apex:pageBlock title="This is apex form2" >
+      
+       
+       </apex:pageBlock>
+    </apex:form>
+       <apex:relatedList list="Contacts"/>
+       <apex:relatedList list="Cases"/>
+</apex:page>

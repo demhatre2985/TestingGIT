@@ -1,0 +1,6 @@
+<aura:component implements="force:lightningQuickAction" >
+    <ltng:require styles="/resource/Lightning/assets/styles/salesforce-lightning-design-system.css"/>
+    	<div class="slds">
+    		
+    	</div>
+</aura:component>

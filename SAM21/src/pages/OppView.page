@@ -1,0 +1,29 @@
+<apex:page standardController="Opportunity" recordsetvar="ops">
+    <b> Logged in User {!$User.FirstName} {!$User.LastName} !!! at {!Today()}</b>
+    <apex:form >
+    <apex:pageBlock title="Details" >
+        <apex:pageBlockSection >
+            <apex:inputField value="{!Opportunity.Name}"/>
+            <apex:inputField value="{!Opportunity.Amount}"/>
+            <apex:inputField value="{!Opportunity.StageName}"/>
+            <apex:inputField value="{!Opportunity.Account.Name}"/>
+            <apex:commandButton value="Save" action="{!save}"/>
+            <apex:commandLink value="Save" action="{!save}"/>
+             <apex:commandButton action="{!Previous}" value="Previous"/>
+            <apex:commandButton action="{!Next}" value="GotoNextRecord"/>
+        </apex:pageBlockSection>
+        
+    </apex:pageBlock>
+    
+    <apex:pageBlock >
+        <apex:pageblockSection >
+        <apex:pageBlockTable value="{!ops}" var="op" columns="3">
+        
+            <apex:commandButton action="{!Next}" value="GotoNextRecord"/>/>
+        
+        </apex:pageBlockTable>
+        </apex:pageblockSection>
+    </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

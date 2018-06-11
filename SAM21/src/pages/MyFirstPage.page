@@ -1,0 +1,17 @@
+<apex:page sidebar="False" standardController="Account" extensions="MyFirstClass1">
+    <apex:form >
+        <apex:pageBlock title="First Visual Force Page">
+            <apex:pageBlockSection title="Custom Page Block">
+                <apex:inputField value="{!account.name}"/>
+                <apex:inputField value="{!account.Rating}"/>
+          
+                <apex:inputField value="{!account.Active__c}"/>
+                   
+            </apex:pageBlockSection>
+            <apex:PageBlockButtons >
+              <apex:commandButton action="{!save}" value="Save Accounts"/>
+              <apex:commandButton action="{!GoToGoogle}" value="Go To Google"/>
+            </apex:PageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

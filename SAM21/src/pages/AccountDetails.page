@@ -1,0 +1,22 @@
+<apex:page standardController="Account" recordSetVar="acct">
+  <apex:form >
+    <apex:pageBlock title="Account List">
+        <apex:pageBlockSection title="Section with all Accounts">
+            <apex:pageBlockTable columns="3" value="{!acct}" var="a1"> 
+                <apex:column title="Account Name" >
+                    <apex:commandLink value="{!a1.Name}" reRender="Block1">
+                        <apex:param name="x" value="{!a1.Id}"/>
+                    </apex:commandLink>
+                </apex:column>
+                
+                <apex:column value="{!a1.Active__c}" title="Status"/>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    
+    
+    <apex:pageBlocksection title="Accounts Details Page" id="Block1">
+        <apex:detail subject="{!$CurrentPage.parameters.x}" relatedList="False" showChatter="true"/>    
+    </apex:pageBlocksection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

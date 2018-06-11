@@ -1,0 +1,41 @@
+<apex:page standardController="Supply__c" recordSetVar="sup" >
+    <apex:form >
+        <apex:pageBlock title="Supplier List" >
+            <apex:pageBlockSection title="Block1">
+                <apex:pageBlockTable columns="3" value="{!sup}" var="s1">
+                        
+                         <apex:column title="SupplierName">
+                             <apex:commandLink value="{!s1.Name}" title="SupplierName" reRender="Block1">
+                                 <apex:param name="x" value="{!s1.Id}"/>
+                                 <apex:param name="y" value="{!s1.Name}"/>
+                             </apex:commandLink>
+                             
+
+                         </apex:column>
+                           
+                     <apex:column title="unit Cost">
+                             <apex:commandLink value="{!s1.Unit_Cost__c}" title="unitCost" reRender="Block2" >
+                                 <apex:param name="bt" value="{!s1.Id}"/>
+
+                             </apex:commandLink>
+                             
+
+                         </apex:column>
+                </apex:pageBlockTable>
+            <apex:pageBlock title="Supplier detailed" id="Block1">
+                <apex:detail subject="{!$CurrentPage.parameters.x}" relatedList="true"/>
+               
+                
+            </apex:pageBlock>
+            
+            <apex:pageBlock title="More Details" id="Block2"  >
+                
+                <apex:detail subject="{!$CurrentPage.parameters.bt}"/>
+            </apex:pageBlock>
+            
+            </apex:pageBlockSection>
+            
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

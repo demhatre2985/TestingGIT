@@ -1,0 +1,21 @@
+<apex:page standardController="Waypoint__c">
+
+    <b>    This is page for {!$User.FirstName} !!! </b>
+        <apex:form >
+            <apex:pageBlock title="Block1">
+                <apex:pageBlockSection columns="2">
+                      <apex:inputText label="Name Details" value="{!Waypoint__c.Name}"/>
+                    
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+            <apex:pageBlock title="Block2">
+                <apex:pageBlockSection columns="3">
+                    <apex:image title="Salesforce logo"/>
+                </apex:pageBlockSection>
+                    
+            
+            </apex:pageBlock>
+        </apex:form>
+             <apex:relatedList list="Contacts"/>
+              <apex:relatedList list="Cases"/>
+</apex:page>

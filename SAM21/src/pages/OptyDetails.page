@@ -1,0 +1,26 @@
+<apex:page standardController="Opportunity" recordSetVar="opt">
+    <apex:form >
+        <apex:pageBlock Title="Opportunity List">
+            <apex:pageBlockSection title="Current Opportunities are Below">
+                <apex:pageBlockTable columns="1" value="{!opt}" var="o1">
+                    <apex:column title="Opportunity Name">
+                        <apex:commandLink value="{!o1.Name}">
+                            <apex:param name="x" value="o1.ID"/>
+                        </apex:commandLink>
+                    </apex:column>
+                </apex:pageBlockTable>
+                
+            <apex:pageBlock title="Details">
+                <apex:detail subject="{!$CurrentPage.parameters.x}" relatedList="true"/>            
+            </apex:pageBlock>
+            
+            </apex:pageBlockSection>
+            
+         
+        
+        </apex:pageBlock>
+        
+       
+    
+    </apex:form>
+</apex:page>

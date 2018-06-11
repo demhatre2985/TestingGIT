@@ -1,0 +1,23 @@
+<apex:page standardController="Account" recordSetVar="ops">
+    <apex:form >
+        <apex:pageBlock title="Account Details page">
+            <apex:pageBlockSection >
+                <apex:pageBlockTable var="o1" value="{!ops}">
+                    <apex:column >
+                        <apex:commandLink value="{!o1.Name}">
+                            <apex:param value="o1.Name" name="x"/>
+                        </apex:commandLink>
+                    </apex:column>
+                  
+                </apex:pageBlockTable>
+                
+                    <apex:pageBlock title="Details">
+                        <apex:detail subject="{!$CurrentPage.parameters.x}" relatedList="true"/>            
+                    </apex:pageBlock>
+              
+            </apex:pageBlockSection>
+      
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

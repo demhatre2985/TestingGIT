@@ -1,0 +1,24 @@
+<apex:page standardController="Job_Application__c" extensions="JobDet">
+
+<h1>This is Job Applications Details Page</h1>
+
+    <apex:pageBlock title="Open Job Applications ">
+        <apex:pageblocktable value="{!openjob}" var="a">
+           <apex:column title="Job Applied" value="{!a.Name}"/>
+           <apex:column title="Total Rating" value="{!a.Total_Rating__c}"/>
+           <apex:column title="Application Status" value="{!a.Status__c}"/>
+           <apex:column title="Candidate" value="{!a.Candidate__c}"/> 
+        </apex:pageblocktable>   
+     
+    </apex:pageBlock>
+      
+    <apex:pageBlock title="Closed Job Applications " >
+          <apex:pageblocktable value="{!closedjob}" var="a">
+           <apex:column title="Job Applied" value="{!a.Name}"/>
+           <apex:column title="Total Rating" value="{!a.Total_Rating__c}"/>
+           <apex:column title="Application Status" value="{!a.Status__c}"/>
+           <apex:column title="Candidate" value="{!a.Candidate__c}"/> 
+        </apex:pageblocktable>
+    </apex:pageBlock>
+
+</apex:page>
